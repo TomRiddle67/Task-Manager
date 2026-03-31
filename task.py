@@ -7,6 +7,7 @@ def add_task (title):
     print (f"Added: {title}")
 
 add_task("Pickup package")
+add_task("Buy Fruits")
 
 #view_task
 def view_tasks():
@@ -18,3 +19,11 @@ def view_tasks():
         print(f" {i}: {status} {task['title']}")
 
 view_tasks()
+
+def delete_task(index):
+    if index < 0 or index >= len(tasks):
+        print("Invalid index!")
+        return
+    removed= tasks.pop(index)
+    print(f"Deleted: {removed['title']}")
+delete_task (1)
