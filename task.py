@@ -1,18 +1,14 @@
 tasks = []
 #add_task
 
-def add_task (title, priority ="meduim"):
+def add_task (title, priority ="medium"):
     task = {
         "title": title,
         "done": False,
-        "priority": priority # "high" "meduim" "low"
+        "priority": priority # "high" "medium" "low"
         }
     tasks.append(task)
-    print (f"Added:[{priority}]: {title}")
-
-add_task("Pickup package")
-add_task("Buy Fruits")
-
+    
 #view_task
 def view_tasks():
     if len(tasks)== 0:
@@ -20,10 +16,11 @@ def view_tasks():
         return
     for i, task in enumerate(tasks):
         status = "[x]" if task ["done"] else "[]"
-        pri = task.get("priority","meduim")
+        pri = task.get("priority","medium")
         print(f" {i}: {status} [{pri}] {task['title']}")
 
-view_tasks()
+def mark_done(index):
+    tasks[index] ["done"]= True
 
 #delete_task
 def delete_task(index):
@@ -32,4 +29,26 @@ def delete_task(index):
         return
     removed= tasks.pop(index)
     print(f"Deleted: {removed['title']}")
-delete_task (1)
+
+
+def main():
+    while True:
+        cmd = input("\n [a]dd [v]iew [d]one [x] delete [q]uit:")
+        if cmd == "a":
+            title = input("Task:")
+            pri = input("Priority (high/medium/low):")
+            add_task(title, pri)
+        elif cmd == "v":
+            view_tasks()
+        elif cmd == "d":
+            view_tasks()
+            i = int(input("Mark done #:"))
+            mark_done(i)
+        elif cmd == "x":
+            view_tasks()
+            i = int(input("Delete #:"))
+            delete_task(i)
+        elif cmd == "q":
+            print("Bye!")
+            break
+main() 
