@@ -1,23 +1,28 @@
 # 📝 CLI Task Manager (Python)
 
-This is a simple command line manager built with python, it allows you
-to create and manage tasks directly from your terminal.
+A simple command-line task manager built with Python.  
+It allows you to create, view, update, and manage tasks directly from your terminal.
 
 ---
 
 ## 🚀 Features
 
-- Add tasks
-- View tasks
-- Simple and beginner-friendly
-- Runs in the terminal
+- ✅ Add tasks
+- ✅ View all tasks
+- ✅ Delete tasks
+- ✅ Mark tasks as complete
+- ✅ Persistent storage (tasks are saved)
 
 ---
 
-## 🧠 Current State
+## 🧠 Overview
 
-The app currently starts with an empty task list.  
-More features like saving tasks and deleting tasks will be added soon.
+This is a fully functional CLI-based task manager designed to demonstrate core programming concepts like:
+
+- User input handling
+- Data structures (lists)
+- File handling (saving tasks)
+- Clean CLI interaction
 
 ---
 
@@ -35,3 +40,12 @@ More features like saving tasks and deleting tasks will be added soon.
 ```bash
 git clone https://github.com/YourUsername/task-manager.git
 cd task-manager
+python main.py
+> python main.py
+
+1. Add Task
+2. View Tasks
+3. Delete Task
+4. Mark Task Complete
+
+Select an option:
